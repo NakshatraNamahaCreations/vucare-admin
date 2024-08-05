@@ -47,7 +47,7 @@ function FEQ() {
     formData.append("category", selectCategory);
     try {
       const response = await axios.post(
-        "http://localhost:8008/api/userapp/addfeq",
+        "https://api.thevucare.com/api/userapp/addfeq",
         formData,
         {
           headers: {
@@ -71,13 +71,13 @@ function FEQ() {
   }, []);
 
   const getbannerimg = async () => {
-    let res = await axios.get("http://localhost:8008/api/userapp/getallfeq");
+    let res = await axios.get("https://api.thevucare.com/api/userapp/getallfeq");
     if (res.status === 200) {
       setBannerdata(res.data?.feq);
       console.log(res.data?.feq);
       setImages(
         res.data?.feq.map((element) => {
-          return `http://localhost:8008/api/userbanner/${element.img[0].contentType}`;
+          return `https://api.thevucare.com/api/userbanner/${element.img[0].contentType}`;
         })
       );
     }
@@ -86,7 +86,7 @@ function FEQ() {
   const deletebannerimg = async (id) => {
     axios({
       method: "post",
-      url: "http://localhost:8008/api/userapp/deletefeq/" + id,
+      url: "https://api.thevucare.com/api/userapp/deletefeq/" + id,
     })
       .then(function (response) {
         //handle success
@@ -105,7 +105,7 @@ function FEQ() {
   }, []);
 
   const getcategory = async () => {
-    let res = await axios.get("http://localhost:8008/api/getcategory");
+    let res = await axios.get("https://api.thevucare.com/api/getcategory");
     if (res.status === 200) {
       setCategoryData(res.data?.category);
     }
@@ -168,7 +168,7 @@ function FEQ() {
                             {element.img.map((image, j) => (
                               <img
                                 className="header_logo"
-                              src={`http://localhost:8008/feq/${image.data}`}
+                              src={`https://api.thevucare.com/feq/${image.data}`}
                                 width={"100px"}
                                 height={"50px"}
                                 alt={`Image ${j + 1}`}

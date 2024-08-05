@@ -19,7 +19,7 @@ function Login() {
       const config = {
         url: "/super/loginSuperAdmin",
         method: "post",
-        baseURL: "http://localhost:8008/api",
+        baseURL: "https://api.thevucare.com/api",
         headers: { "content-type": "application/json" },
         data: { emailorphone: emailOrName, password: password },
       };

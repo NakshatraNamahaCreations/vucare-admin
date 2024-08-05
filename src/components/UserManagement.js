@@ -16,7 +16,7 @@ function UserManagement() {
   }, []);
 
   const getcustomers = async () => {
-    let res = await axios.get("http://localhost:8008/api/getcustomer");
+    let res = await axios.get("https://api.thevucare.com/api/getcustomer");
     if ((res.status = 200)) {
       setuserdata(res.data?.customers.filter((i)=>i.type === "userapp"));
       setSearchResults(res.data?.customers.filter((i)=>i.type === "userapp"));
@@ -26,7 +26,7 @@ function UserManagement() {
   const deleteuser = async (id) => {
     axios({
       method: "post",
-      url: "http://localhost:8008/api/deletetercustomer/" + id,
+      url: "https://api.thevucare.com/api/deletetercustomer/" + id,
     })
       .then(function (response) {
         //handle success

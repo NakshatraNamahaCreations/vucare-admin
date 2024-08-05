@@ -26,7 +26,7 @@ function Sidenav() {
       const config = {
         url: `/super/logout/${admin?._id}`,
         method: "post",
-        baseURL: "http://localhost:8008/api",
+        baseURL: "https://api.thevucare.com/api",
         headers: { "content-type": "application/json" },
         data: {},
       };

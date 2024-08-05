@@ -40,7 +40,7 @@ function Category() {
         const config = {
           url: "/addcategory",
           method: "post",
-          baseURL: "http://localhost:8008/api",
+          baseURL: "https://api.thevucare.com/api",
           data: formdata,
         };
         await axios(config).then(function (response) {
@@ -67,7 +67,7 @@ function Category() {
   }, []);
 
   const getcategory = async () => {
-    let res = await axios.get("http://localhost:8008/api/getcategory");
+    let res = await axios.get("https://api.thevucare.com/api/getcategory");
     if ((res.status = 200)) {
       setcategorydata(res.data?.category);
       setfilterdata(res.data?.category);
@@ -86,7 +86,7 @@ function Category() {
       const config = {
         url: `/editcategory/${catagoryId}`,
         method: "put",
-        baseURL: "http://localhost:8008/api",
+        baseURL: "https://api.thevucare.com/api",
         data: formdata,
         headers: {
           "Content-Type": "multipart/form-data",
@@ -123,7 +123,7 @@ function Category() {
       selector: (row) => (
         <div>
           <img
-           src={`http://localhost:8008/category/${row.categoryImg}`}
+           src={`https://api.thevucare.com/category/${row.categoryImg}`}
             width="50px"
             height="50px"
           />
@@ -158,7 +158,7 @@ function Category() {
   const deletecategory = async (id) => {
     axios({
       method: "post",
-      url: "http://localhost:8008/api/deletecategory/" + id,
+      url: "https://api.thevucare.com/api/deletecategory/" + id,
     })
       .then(function (response) {
         //handle success

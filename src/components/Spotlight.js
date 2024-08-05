@@ -39,7 +39,7 @@ function Spotlight() {
       const config = {
         url: "/userapp/addspotlightbanner",
         method: "post",
-        baseURL: "http://localhost:8008/api",
+        baseURL: "https://api.thevucare.com/api",
 
         data: formdata,
       };
@@ -59,7 +59,7 @@ function Spotlight() {
   }, []);
 
   const getcategory = async () => {
-    let res = await axios.get("http://localhost:8008/api/userapp/getappsubcat");
+    let res = await axios.get("https://api.thevucare.com/api/userapp/getappsubcat");
     if ((res.status = 200)) {
       setcategorydata(res.data?.subcategory);
     }
@@ -71,7 +71,7 @@ function Spotlight() {
 
   const getbannerimg = async () => {
     let res = await axios.get(
-      "http://localhost:8008/api/userapp/getallspotlightbanner"
+      "https://api.thevucare.com/api/userapp/getallspotlightbanner"
     );
     if ((res.status = 200)) {
       setBannerdata(res.data?.spotlightbanner);
@@ -82,7 +82,7 @@ function Spotlight() {
   const deletebannerimg = async (id) => {
     axios({
       method: "post",
-      url: "http://localhost:8008/api/userapp/deletespotlightbanner/" + id,
+      url: "https://api.thevucare.com/api/userapp/deletespotlightbanner/" + id,
     })
       .then(function (response) {
         //handle success
@@ -152,7 +152,7 @@ function Spotlight() {
                           <td>
                             <img
                               className="header_logo"
-                            src={`http://localhost:8008/spotlight/${element.banner}`}
+                            src={`https://api.thevucare.com/spotlight/${element.banner}`}
                               width={"100px"}
                               height={"50px"}
                             />

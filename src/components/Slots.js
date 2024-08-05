@@ -25,7 +25,7 @@ function Slots() {
         const config = {
           url: "/userapp/addslots",
           method: "post",
-          baseURL: "http://localhost:8008/api",
+          baseURL: "https://api.thevucare.com/api",
           data: {
             startTime: startTime,
             endTime: endTime,
@@ -49,7 +49,7 @@ function Slots() {
   }, []);
 
   const getslots = async () => {
-    let res = await axios.get("http://localhost:8008/api/userapp/getslots");
+    let res = await axios.get("https://api.thevucare.com/api/userapp/getslots");
     if ((res.status = 200)) {
       setcategorydata(res.data?.slots);
       setfilterdata(res.data?.slots);
@@ -91,7 +91,7 @@ function Slots() {
   const deletecategory = async (id) => {
     axios({
       method: "post",
-      url: "http://localhost:8008/api/userapp/deleteslots/" + id,
+      url: "https://api.thevucare.com/api/userapp/deleteslots/" + id,
     })
       .then(function (response) {
         //handle success

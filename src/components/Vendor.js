@@ -83,7 +83,7 @@
 //         const config = {
 //           url: "/addtechnician",
 //           method: "post",
-//           baseURL: "http://localhost:8008/api",
+//           baseURL: "https://api.thevucare.com/api",
 //           // data: formdata,
 //           headers: { "content-type": "application/json" },
 //           data: {
@@ -118,7 +118,7 @@
 //   }, []);
 
 //   const gettechnician = async () => {
-//     let res = await axios.get("http://localhost:8008/api/getalltechnician");
+//     let res = await axios.get("https://api.thevucare.com/api/getalltechnician");
 //     if ((res.status = 200)) {
 //       settechniciandata(res.data?.technician.filter((i)=>i.Type === "Vendor"));
 //       setfilterdata(res.data?.technician.filter((i)=>i.Type === "Vendor"));
@@ -126,13 +126,13 @@
 //   };
 
 //   const getcity = async () => {
-//     let res = await axios.get("http://localhost:8008/api/master/getcity");
+//     let res = await axios.get("https://api.thevucare.com/api/master/getcity");
 //     if ((res.status = 200)) {
 //       setcitydata(res.data?.mastercity);
 //     }
 //   };
 //   const getcategory = async () => {
-//     let res = await axios.get("http://localhost:8008/api/getcategory");
+//     let res = await axios.get("https://api.thevucare.com/api/getcategory");
 //     if ((res.status = 200)) {
 //       setcategorydata(res.data?.category);
 //     }
@@ -141,7 +141,7 @@
 //   const deletetechnician = async (id) => {
 //     axios({
 //       method: "post",
-//       url: "http://localhost:8008/api/deletetechnician/" + id,
+//       url: "https://api.thevucare.com/api/deletetechnician/" + id,
 //     })
 //       .then(function (response) {
 //         //handle success
@@ -241,7 +241,7 @@
 //       const config = {
 //         url: `/edittechnician/${data._id}`,
 //         method: "post",
-//         baseURL: "http://localhost:8008/api",
+//         baseURL: "https://api.thevucare.com/api",
 //         headers: { "content-type": "application/json" },
 //         data: {
 //           Type: Type1,

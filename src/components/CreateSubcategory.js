@@ -38,7 +38,7 @@ function Subcategory() {
   }, []);
 
   const getAllSubcategory = async () => {
-    let res = await axios.get("http://localhost:8008/api/userapp/getappsubcat");
+    let res = await axios.get("https://api.thevucare.com/api/userapp/getappsubcat");
     if (res.status === 200) {
       setSubcategories(res.data?.subcategory);
       console.log("subcategories", res.data?.subcategory);
@@ -58,7 +58,7 @@ function Subcategory() {
         const config = {
           url: "/userapp/addappresubcat",
           method: "post",
-          baseURL: "http://localhost:8008/api",
+          baseURL: "https://api.thevucare.com/api",
           data: formdata,
         };
         await axios(config).then(function (response) {
@@ -75,7 +75,7 @@ function Subcategory() {
   };
   const getsubcategory = async () => {
     let res = await axios.get(
-      "http://localhost:8008/api/userapp/getappresubcat"
+      "https://api.thevucare.com/api/userapp/getappresubcat"
     );
     if (res.status === 200) {
       console.log("All list---", res);
@@ -94,7 +94,7 @@ function Subcategory() {
       const config = {
         url: `/userapp/editappresubcat/${editSubcategoryList._id}`,
         method: "post",
-        baseURL: "http://localhost:8008/api",
+        baseURL: "https://api.thevucare.com/api",
         headers: { "content-type": "multipart/form-data" },
         data: formdata,
       };
@@ -128,7 +128,7 @@ function Subcategory() {
         <div>
           <img
             className="header_logo"
-          src={`http://localhost:8008/resubcat/${row.resubcatimg}`}
+          src={`https://api.thevucare.com/resubcat/${row.resubcatimg}`}
             width={"50px"}
             height={"50px"}
           />
@@ -165,7 +165,7 @@ function Subcategory() {
   const deleteservices = async (id) => {
     axios({
       method: "post",
-      url: "http://localhost:8008/api/userapp/deleteappresubcat/" + id,
+      url: "https://api.thevucare.com/api/userapp/deleteappresubcat/" + id,
     })
       .then(function (response) {
         //handle success

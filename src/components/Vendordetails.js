@@ -19,7 +19,7 @@ function Vendordetails() {
   }, []);
 
   const gettechnician = async () => {
-    let res = await axios.get("http://localhost:8008/api/getalltechnician");
+    let res = await axios.get("https://api.thevucare.com/api/getalltechnician");
     if ((res.status = 200)) {
       settechniciandata(
         res.data?.technician.filter((i) => i.Type === "Vendor" && i._id == id)

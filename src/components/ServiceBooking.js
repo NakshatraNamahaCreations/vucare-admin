@@ -20,7 +20,7 @@ function ServiceBooking() {
   const getServiceDetails = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8008/api/getservicedetails`
+        `https://api.thevucare.com/api/getservicedetails`
       );
       if (response.status === 200) {
         let filteredData = response.data.servicedetails;
@@ -36,7 +36,7 @@ function ServiceBooking() {
   const getAllServices = async () => {
     try {
       let res = await axios.get(
-        "http://localhost:8008/api/userapp/getservices"
+        "https://api.thevucare.com/api/userapp/getservices"
       );
       if (res.status === 200) {
         let BookedIDD = BookedId.map((ele) => ele);
@@ -57,7 +57,7 @@ function ServiceBooking() {
       const config = {
         url: `/editservicedetails/${data}`,
         method: "post",
-        baseURL: "http://localhost:8008/api",
+        baseURL: "https://api.thevucare.com/api",
         headers: { "Content-Type": "application/json" },
         data: { ServiceStatus: "Completed" },
       };
@@ -137,7 +137,7 @@ function ServiceBooking() {
                     <td>{ele.TotalAmt}</td>
                     <td>
                       <img
-                       src={`http://localhost:8008/service/${ServiceData?.serviceImg}`}
+                       src={`https://api.thevucare.com/service/${ServiceData?.serviceImg}`}
                         alt=""
                         height={"30px"}
                         width={"30px"}
